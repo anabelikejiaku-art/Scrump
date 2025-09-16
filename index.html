@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scrump Inventory Mini</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff6bd6" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Scrump Inventory Mini</h1>
+    <p class="subtitle">Quick stock jotter for Scrumpdillicious</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add Production</h2>
+      <form id="entryForm">
+        <label>Date of production
+          <input type="date" id="date" required />
+        </label>
+        <div class="grid">
+          <label>Zobo Plain
+            <input type="number" id="zobo_plain" min="0" step="1" placeholder="0" />
+          </label>
+          <label>Zobo Banana
+            <input type="number" id="zobo_banana" min="0" step="1" placeholder="0" />
+          </label>
+          <label>Zobo Coconut
+            <input type="number" id="zobo_coconut" min="0" step="1" placeholder="0" />
+          </label>
+          <label>Chapman
+            <input type="number" id="chapman" min="0" step="1" placeholder="0" />
+          </label>
+          <label>Cocodate
+            <input type="number" id="cocodate" min="0" step="1" placeholder="0" />
+          </label>
+        </div>
+        <button type="submit" class="primary">Save Entry</button>
+        <button type="button" id="resetBtn" class="ghost">Clear Form</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Entries</h2>
+      <div class="actions">
+        <button id="exportCsv" class="secondary">Export CSV</button>
+        <button id="deleteAll" class="danger">Delete All</button>
+      </div>
+      <div class="tableWrap">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Zobo Plain</th>
+              <th>Zobo Banana</th>
+              <th>Zobo Coconut</th>
+              <th>Chapman</th>
+              <th>Cocodate</th>
+              <th>Total</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Saved on your device • Works offline • v1.0</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
